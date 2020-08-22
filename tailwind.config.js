@@ -1,6 +1,13 @@
 module.exports = {
   theme: {
-    extend: {},
+    extend: {
+      fontSize: {
+        'sxl': '10rem'
+      },
+      letterSpacing: {
+        'tightest': '-.075em'
+      }
+    },
   },
   variants: {},
   plugins: [],
