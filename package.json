@@ -1,32 +1,35 @@
 {
-  "name": "emergency-site",
+  "name": "jet",
   "version": "1.0.0",
-  "description": "A boilerplate for emergency information websites",
+  "description": "It's (j)ust (e)leventy and (t)ailwind … OK, and a few other things; it's still *really* small though.",
   "scripts": {
-    "build": "npm run clean && cross-env ELEVENTY_ENV=production eleventy",
-    "watch": "eleventy --watch",
-    "serve": "eleventy --serve",
-    "debug": "DEBUG=* eleventy",
-    "clean": "del-cli dist",
-    "start": "npm run clean && npm run serve"
+    "clean": "rm -rf public",
+    "tailwind": "tailwindcss build src/css/tailwind.css -o src/css/styles.css -c tailwind.config.js",
+    "dev": "npm run tailwind && npx @11ty/eleventy --serve",
+    "build": "npm run tailwind && postcss src/css/styles.css --replace && npm run clean && npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/maxboeck/emergency-site"
+    "url": "git+https://marcamos@github.com/marcamos/jet.git"
   },
-  "author": "Max Böck",
-  "license": "MIT",
-  "dependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "@11ty/eleventy-plugin-rss": "^1.0.7",
-    "clean-css": "^4.2.3",
-    "cross-env": "^7.0.2",
-    "del-cli": "^3.0.0",
-    "dotenv": "^8.2.0",
-    "eleventy-plugin-pwa": "^1.0.8",
-    "htmlnano": "^0.2.5",
-    "luxon": "^1.22.0",
-    "markdown-it": "^10.0.0",
-    "markdown-it-anchor": "^5.2.5"
+  "keywords": [
+    "eleventy",
+    "11ty",
+    "tailwind",
+    "tailwindcss",
+    "purgecss"
+  ],
+  "author": "marc amos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcamos/jet/issues"
+  },
+  "homepage": "https://github.com/marcamos/jet#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "cssnano": "^4.1.10",
+    "postcss-cli": "^7.1.1",
+    "tailwindcss": "^1.6.2"
   }
 }
