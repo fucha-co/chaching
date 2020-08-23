@@ -1,35 +1,14 @@
 {
-  "name": "jet",
-  "version": "1.0.0",
-  "description": "It's (j)ust (e)leventy and (t)ailwind … OK, and a few other things; it's still *really* small though.",
   "scripts": {
-    "clean": "rm -rf public",
-    "tailwind": "tailwindcss build src/css/tailwind.css -o src/css/styles.css -c tailwind.config.js",
-    "dev": "npm run tailwind && npx @11ty/eleventy --serve",
-    "build": "npm run tailwind && postcss src/css/styles.css --replace && npm run clean && npx @11ty/eleventy"
+    "start": "eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
+    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss styles/tailwind.css --o _site/style.css"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://marcamos@github.com/marcamos/jet.git"
-  },
-  "keywords": [
-    "eleventy",
-    "11ty",
-    "tailwind",
-    "tailwindcss",
-    "purgecss"
-  ],
-  "author": "marc amos",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/marcamos/jet/issues"
-  },
-  "homepage": "https://github.com/marcamos/jet#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
-    "@fullhuman/postcss-purgecss": "^2.3.0",
-    "cssnano": "^4.1.10",
+    "alpinejs": "^2.6.0",
+    "html-minifier": "^4.0.0",
+    "postcss-clean": "^1.1.0",
     "postcss-cli": "^7.1.1",
-    "tailwindcss": "^1.7.0"
+    "tailwindcss": "^1.7.2"
   }
 }

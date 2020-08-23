@@ -1,29 +1,47 @@
-# jet 🛩
-It’s (j)ust (e)leventy and (t)ailwind … OK, and a few other things; it’s still *really* small though.
-* [View on Netlify](https://marcamos-jet.netlify.com/)
-* [View on GitHub](https://github.com/marcamos/jet#readme)
+# eleventy-tailwindcss-alpinejs-starter
 
-## Goal
-[Eleventy](https://www.11ty.dev/) and [Tailwind CSS](https://tailwindcss.com/) (combined with [PurgeCSS](https://purgecss.com/)) are my favorite things right now.
+A starter repository showing how to build a website with the [Eleventy](https://www.11ty.dev), [Tailwind CSS](https://tailwindcss.com), and [Alpine.js](https://github.com/alpinejs/alpine).
 
-While learning how to use Eleventy, I came across [a few starter projects](https://www.11ty.dev/docs/starter/) that combine it with Tailwind CSS and PurgeCSS, which is _amazing_, but they also come with so much more.
+## Getting Started
 
-Personally, I _only_ want Eleventy, Tailwind, and PurgeCSS … and, taking the desire for simplicity one step further, I only want to use them via NPM scripts.
+### 1. Clone this Repository
 
-So, I made this thing and it seems to work 🤷‍♀️
+```
+git clone https://github.com/gregwolanski/eleventy-tailwindcss-alpinejs-starter.git my-website-name
+```
 
-## How you can use it
-1. Clone this repo
-2. Install dependencies: `npm i`
-3. Start development: `npm run dev`
-4. Visit http://localhost:8080 to see your work-in-progress
-5. Do super-fun Eleventy and Tailwind things
-6. When you’re done: `npm run build`
+### 2. Navigate to the directory
 
-That’s it 🕺
+```
+cd my-website-name
+```
 
+### 3. Install dependencies
 
-## Disclaimer
-I built this in about an hour through trial-and-error, so I'm sure there's _a lot_ of room for improvement.
+```
+npm install
+```
 
-If you try it, find issues and/or think of improvements, please file an issue and/or submit a pull request.
+### 4. Build the project to generate the first CSS
+
+This step is only required the very first time.
+
+```
+npm run build
+```
+
+### 5. Run Eleventy
+
+```
+npm run start
+```
+
+## Author
+
+[Greg Wolanski](https://gregwolanski.com)
+
+## License
+
+MIT
+
+See `LICENSE` for more information.
