@@ -6,3 +6,17 @@
 
 @tailwind components;
 @tailwind utilities;
+
+.bg-dark-pink {
+  background-color: #E22948;
+}
+.text-dark-pink {
+  color: #E22948;
+}
+
+.bg-red-500 {
+  background-color: #F94A49;
+}
+.text-red-500 {
+  color: #F94A49;
+}

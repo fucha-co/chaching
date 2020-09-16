@@ -10,12 +10,6 @@ module.exports = {
       colors: {
         change: "black",
       },
-      fontSize: {
-        'sxl': '9rem'
-      },
-      letterSpacing: {
-        'tightest': '-.075em'
-      },
     },
   },
   variants: {},

@@ -2,11 +2,9 @@
 <html lang="en">
   <head>
     <title>
-      {#% block title %}{% endblock %#}
-      cha ching
+      {% block title %}Chaching!{% endblock %}
     </title>
     <meta charset="UTF-8"/>
-    <meta name="description" content="instant easy expert Shopify advice."/>
     {% if description %}
       <meta name="description" content="{{description}}"/>
     {% endif %}
@@ -16,7 +14,7 @@
     {% block head %}{% endblock %}
     <script src="/js/alpine.js?v={% version %}"></script>
   </head>
-  <body>
+  <body class="max-w-6xl px-4 txt-blk">
     {% block content %}
       {{ content | safe }}
     {% endblock %}
