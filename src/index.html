@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        <title>ChaChing!</title>
+        <meta content="chaching.co" name="title">
+        <meta content="Expert Shopify & Shopify Plus." name="description">
+
+        <meta content="website" property="og:type">
+        <meta content="https://chaching.co/" property="og:url">
+        <meta content="chaching.co" property="og:title">
+        <meta content="Expert coding, consulting, & creative for big & little brands." property="og:description">
+        <meta content="https://chaching.co/i/social.png" property="og:image">
+
+        <meta content="summary_large_image" property="twitter:card">
+        <meta content="https://chaching.co/" property="twitter:url">
+        <meta content="chaching.co" property="twitter:title">
+        <meta content="Expert coding, consulting, & creative for big & little brands." property="twitter:description">
+        <meta content="https://chaching.co/i/social.png" property="twitter:image">
+        <link href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><text y=&quot;.9em&quot; font-size=&quot;90&quot;>🌈</text></svg>" rel="icon"><link href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><text y=&quot;.9em&quot; font-size=&quot;90&quot;>🌈</text></svg>" rel="icon">
+        <style>
+		*,
+		::after,
+		::before {
+			box-sizing: border-box
+		}
+
+		blockquote,
+		body,
+		dd,
+		dl,
+		figure,
+		h1,
+		h2,
+		h3,
+		h4,
+		p {
+			margin: 0
+		}
+
+		ol[role=list],
+		ul[role=list] {
+			list-style: none
+		}
+
+		html:focus-within {
+			scroll-behavior: smooth
+		}
+
+		body {
+			min-height: 100vh;
+			text-rendering: optimizeSpeed;
+			line-height: 1.5
+		}
+
+		a:not([class]) {
+			text-decoration-skip-ink: auto
+		}
+
+		img,
+		picture {
+			max-width: 100%;
+			display: block
+		}
+
+		button,
+		input,
+		select,
+		textarea {
+			font: inherit
+		}
+
+		@media (prefers-reduced-motion:reduce) {
+			html:focus-within {
+				scroll-behavior: auto
+			}
+
+			*,
+			::after,
+			::before {
+				animation-duration: 0s !important;
+				animation-iteration-count: 1 !important;
+				transition-duration: 0s !important;
+				scroll-behavior: auto !important
+			}
+		}
+
+		@font-face {
+			font-family: tiempos;
+			src: url("/fonts/tiempos-headline-web-bold-subset.woff");
+			font-weight: 600;
+			font-display: swap
+		}
+
+		@font-face {
+			font-family: soehne;
+			src: url("/fonts/soehne-web-buch-subset.woff");
+			font-display: swap;
+			font-weight: 400
+		}
+
+		:root {
+			--s-ratio: 1.5;
+			--s-5: calc(var(--s-4) / var(--s-ratio));
+			--s-4: calc(var(--s-3) / var(--s-ratio));
+			--s-3: calc(var(--s-2) / var(--s-ratio));
+			--s-2: calc(var(--s-1) / var(--s-ratio));
+			--s-1: calc(var(--s0) / var(--s-ratio));
+			--s0: 1rem;
+			--s1: calc(var(--s0) * var(--s-ratio));
+			--s2: calc(var(--s1) * var(--s-ratio));
+			--s3: calc(var(--s2) * var(--s-ratio));
+			--s4: calc(var(--s3) * var(--s-ratio));
+			--s5: calc(var(--s4) * var(--s-ratio));
+			--s6: calc(var(--s5) * var(--s-ratio));
+			--measure: 72rem;
+			--page-margin: clamp(var(--s2), 10vw, var(--s6));
+			--font-sans: soehne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+			--font-mono: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Menlo, Monaco, "Courier New", Courier, monospace;
+			--font-body: tiempos, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+			--color-black: #000C14;
+			--color-white: #f9fafb;
+			--color-yellow: #fcd34d;
+			--color-green: #22bd83;
+            --color-grey: #2c2c2c;
+			--color-blue: #0056B4;
+			--color-red: #b91c1c;
+			--color-pink: #FF499E;
+			--color-purple: #5D2E8C;
+			--color-orange: #D96C06;
+			--color-nude: #FFECD1;
+			--color-melon: #FF6666;
+			--color-fuscia: #9B287B;
+			
+		}
+
+		body {
+			display: flex;
+			flex-direction: column;
+			color: var(--theme-text);
+			font-family: var(--font-body);
+		}
+
+		body * {
+			font-size: clamp(calc(var(--s1) + .1rem), 5vw, var(--s3));
+			line-height: 1.2;
+			letter-spacing: -.00125em
+		}
+
+		a {
+			color: currentcolor;
+			font-size: inherit
+		}
+
+		a:hover {
+			color: var(--theme-primary);
+			text-decoration: underline
+		}
+
+		code {
+			font-family: var(--font-mono)
+		}
+
+		.box {
+			--box-padding: var(--page-margin);
+			padding: var(--box-padding)
+		}
+
+		.center {
+			box-sizing: content-box;
+			margin-left: auto;
+			margin-right: auto
+		}
+
+		.stack>*+* {
+			margin-top: var(--stack-space, 1em)
+		}
+
+		.stack-lg>*+* {
+			margin-top: var(--page-margin)
+		}
+
+		.theme-inverse {
+			--theme-background: var(--theme-primary);
+			--theme-text: var(--theme-secondary);
+			--theme-heading: var(--theme-secondary);
+			--theme-icon: var(--theme-secondary)
+		}
+
+		.themed {
+			background-color: var(--theme-background);
+			color: var(--theme-text)
+		}
+
+		.themed a {
+			color: var(--theme-link)
+		}
+
+		.grid {
+			display: grid
+		}
+
+		.measure {
+			max-width: var(--measure)
+		}
+
+		.visually-hidden {
+			clip: rect(0 0 0 0);
+			clip-path: inset(50%);
+			height: 1px;
+			overflow: hidden;
+			position: absolute;
+			white-space: nowrap;
+			width: 1px
+		}
+
+		.theme-site {
+			background: rgb(63,94,251);
+			background: linear-gradient(149deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+			--theme-text: var(--color-white);
+			--theme-footer-heading: var(--color-yellow);
+			--theme-footer-text: var(--color-white)
+		}
+
+		.theme-projects {
+			--theme-background: var(--color-black);
+			--theme-text: var(--color-white);
+			--theme-icon: var(--color-green);
+			--theme-icon-background: var(--color-green);
+			--theme-footer-background: var(--color-green)
+		}
+
+		.theme-twitter {
+			--theme-background: var(--color-blue);
+			--theme-text: var(--color-white);
+			--theme-icon: var(--color-green)
+		}
+
+		.theme-blog {
+			--theme-background: var(--color-white);
+			--theme-text: var(--color-black);
+			--theme-icon: var(--color-red)
+		}
+
+		.theme-pronounced {
+			--theme-background: var(--color-black);
+			--theme-icon-background: var(--color-yellow);
+			--theme-icon: var(--color-yellow);
+			--theme-text: var(--color-white);
+			--theme-footer-background: var(--color-yellow);
+			--theme-accent: var(--color-yellow)
+		}
+
+		.header {
+			padding-right: var(--page-margin);
+			padding-bottom: var(--page-margin);
+			padding-left: var(--page-margin)
+		}
+
+		.header-icon {
+			--theme-icon: var(--theme-background);
+			box-sizing: content-box;
+			width: 1em;
+			margin-left: -.5em;
+			padding-top: 1em;
+			padding-right: .5em;
+			padding-bottom: .25em;
+			padding-left: .5em;
+			background-color: var(--theme-icon-background, var(--theme-text))
+		}
+
+		.page h1 {
+			color: var(--theme-heading)
+		}
+
+		.page-header {
+			padding-top: 0
+		}
+
+		.pre-footer {
+			flex: 1 0 auto
+		}
+
+		.footer {
+			background-color: var(--theme-footer-background, var(--theme-text));
+			color: var(--theme-footer-text, var(--theme-background));
+			--stack-space: var(--s0);
+			flex-shrink: 0
+		}
+
+		.footer h2 {
+			max-width: 20ch;
+			color: var(--theme-footer-heading);
+			font-size: clamp(var(--s0), 2.5vw, var(--s2))
+		}
+
+		.footer p {
+			max-width: 40ch;
+			font-family: var(--font-sans);
+			font-size: clamp(var(--s0), 2.5vw, var(--s1));
+			line-height: 1.5
+		}
+
+		.footer svg {
+			--size: clamp(1em, 2.5vw, var(--s0));
+			width: var(--size);
+			margin-right: calc(var(--size)/ 8)
+		}
+
+		.footer a {
+			color: var(--theme-footer-text, var(--theme-background))
+		}
+
+		.footer a:hover {
+			color: var(--theme-light)
+		}
+
+		.tile {
+			min-height: calc((100vh - var(--s2))/ 4);
+			padding: clamp(var(--s2), 10vw, var(--s6));
+			font-weight: 700
+		}
+
+		.tile svg {
+			width: 1em
+		}
+
+		.tiles>:nth-child(1) {
+			padding-top: 0;
+			justify-content: flex-start
+		}
+
+		.black {
+			--theme-background: var(--color-black);
+			--theme-text: var(--color-white);
+		}
+
+		.blacktext {
+			--theme-text: var(--color-black);
+		}
+		.blue {
+			--theme-background: var(--color-blue);
+			--theme-text: var(--color-white);
+		}
+
+		.fuscia {
+			--theme-background: var(--color-fuscia);
+			--theme-text: var(--color-white);
+		}
+
+		.green {
+			--theme-background: var(--color-green);
+			--theme-text: var(--color-black);
+		}
+
+        .grey {
+			--theme-background: var(--color-grey);
+			--theme-text: var(--color-white);
+		}
+
+		.melon {
+			--theme-background: var(--color-melon);
+			--theme-text: var(--color-black);
+		}
+
+		.nude {
+			--theme-background: var(--color-nude);
+			--theme-text: var(--color-black);
+		}
+
+		.orange {
+			--theme-background: var(--color-orange);
+			--theme-text: var(--color-black);
+		}
+
+		.pink {
+			--theme-background: var(--color-pink);
+			--theme-text: var(--color-black);
+		}
+
+		.purple {
+			--theme-background: var(--color-purple);
+			--theme-text: var(--color-white);
+		}
+
+		.white {
+			--theme-background: var(--color-white);
+			--theme-text: var(--color-black);
+		}
+
+		.yellow {
+			--theme-background: var(--color-yellow);
+			--theme-text: var(--color-black);
+		}
+
+		.tile-high {
+			min-height: calc((100vh - var(--s2))/ 4);
+			padding: clamp(var(--s2), 10vw, var(--s6));
+			font-weight: 700
+		}
+
+		.bow {
+			font-size: clamp(var(--s3), 2.5vw, var(--s4));
+			padding-right: 0.1em;
+		}
+
+		.under {text-decoration: underline;}
+        .nobull li {list-style-type: none;}
+
+        body {
+            border-top: 0px solid var(--color-yellow);
+        }
+
+        @keyframes bounce { 
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50px); }
+        }
+        .bounce {
+            animation: bounce 0.8s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+	</style>
+
+	<link rel="preload" href="/fonts/tiempos-headline-web-bold-subset.woff" as="font"
+		type="font/woff" crossorigin="">
+	<link href="/fonts/soehne-web-buch-subset.woff" as="font" type="font/woff"
+		crossorigin="">
+</head>
+
+<body class=" themed theme-site">
+	<!--header class="[] header">
+		<div class=" center stack measure">
+			<a href="/">
+				<div class="[] header-icon" role="img" aria-label="Home">
+					🌈 STOQE
+				</div>
+			</a>
+		</div>
+	</header-->
+
+
+	<main class=" grid tiles">
+
+		<article id="" class=" themed">
+			<div class=" tile ">
+				<div class=" center stack measure ">
+					<h1>
+						<p>
+							<span class="under"></span>
+							ChaChing!
+							<br><br>
+							Expert Shopify advice & Shopify Plus Partner. Specialising in performance, optimisation, customisation, custom themes, headless themes, & more.
+							<!--p>	&middot; Expert Shopify Advice<br>
+								&middot; Ingenious Shopify Solutions<br>
+								&middot; Official Shopify Plus Partner
+							</p-->
+                        </p>
+
+						<p>
+							<!--span class="under">Finally</span-->
+							<p>
+							<br><br>
+							<a href="tel:+61488482424">Click to call</a> or <a href="mailto:hello@chaching.co">click to email</a>.</p>
+					</h1>
+				</div>
+			</div>
+		</article>
+
+
+		<!--article id="" class=" blue themed tile ">
+			<div class=" center stack measure">
+				<p><span class="under">Recently I've worked with</span>:<br><br> Gillette, GSK, P&G, LAA, Lorna Jane, Vodacom, Old Spice, Zoncolan, Sparkke, Zinger, ST ALi, Mobile Muster, AMTA, Affinity, Sensory Lab, SUPRA G, Ivy & Wood, ASLM, Smalls Bar, Sketch Group, Robbie McEwen, ROLL Recovery, Manufactum, Romero Creations, Como Bike, Clement Coffee, MCH Imports, Ox The Baker, Team Apparrel, People With Purpose, What's Fishin, and more.</p>
+			</div>
+		</article>
+
+
+        <article id="" class=" yellow themed tile">
+			<div class=" center stack measure">
+				<p><span class="under">Fun fact</span>: My first 3 clients of 2021 had a combined 2020 revenue of $161 Billion 💰</p>
+			</div>
+		</article>
+
+
+		<article id="" class=" fuscia themed tile">
+			<div class=" center stack measure">
+				<p><span class="under">I work wonders with Websites</span>:
+					<ul>
+						<li>Design & Development</li>
+                        <li>Maintanance & Management</li>
+                        <li>Migration, Optimisation, Consolidation</li>
+						<li>JAMstack, CMS, & APIs</li>
+                        <li>Analytics, Search, SEO</li>
+					</ul>
+				</p>
+			</div>
+		</article>
+
+
+		<article id="" class=" green themed tile">
+			<div class=" center stack measure">
+				<p><span class="under">I do delights with Domains</span>:
+					<ul>
+						<li>Renewals & Registration</li>
+						<li>Transfer & Consolidation</li>
+						<li>Mainanance & Management</li>
+						<li>Security, Audits, & Alerts</li>
+					</ul>
+				</p>
+			</div>
+		</article>
+
+
+		<article id="" class=" nude themed tile">
+			<div class=" center stack measure">
+				<p><span class="under">I'm an expert in Email</span>:
+					<ul>
+						<li>Configation & Migration</li>
+						<li>Consolidation & Optimisation</li>
+						<li>Maintanance & Management</li>
+						<li>Security, Audits, Alerts</li>
+					</ul>
+				</p>
+			</div>
+		</article>
+
+
+		<article id="" class=" melon themed tile">
+			<div class=" center stack measure">
+				<p><span class="under">My Creative's Insane</span>:
+					<ul>
+						<li>Ads, Blurbs, & Slogans</li>
+                        <li>Campaigns & Concepts</li>
+                        <li>Brand Names & Taglines</li>
+						<li>Creative & Copy Writing</li>
+					</ul>
+				</p>
+			</div>
+		</article>
+
+
+        <article id="" class=" black themed tile">
+			<div class=" center stack measure">
+				<p><span class="under"></span>But wait, there's more...</p>
+			</div>
+		</article>
+
+
+		<article id="" class=" purple themed tile">
+			<div class=" center stack measure">
+				<p><span class="under">But wait, there's more</span>.<br>
+                    <span class="under">There's more about Lane</span>!<br><be></br>
+                    <span class="under">I'm also</span>:
+					<ul>
+						<li>Kind, caring, & sharing</li>
+						<li>A gentle, tender soul</li>
+						<li>Happy, healthy, & humble</li>
+						<li>Perfect for this role</li>
+					</ul>
+				</p>
+			</div>
+		</article>
+
+
+		<article id="" class=" yellow themed tile">
+			<div class=" center stack measure">
+				<p><span class="under">Why this Website?</span>
+				<p>I build this website in just one day as a sneak peek of my skills and a statement of my strengths: agility, ability, delivery. It uses the same high-performance tools & tech as Google's own web dev team and has a 100% perfect Website Score; it scores 100/100 for Performance, Accessability, Best Practices, and SEO (<a target="_blank" href="https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fxactweb.dev%2F">see report</a>). I'd love to lead the way to improving your website performance scores (<a target="_blank" href="https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fwww.buildxact.com.au%2F">here's yours</a>).</p>
+			</div>
+		</article>
+
+
+        <article id="" class=" blue themed tile">
+			<div class=" center stack measure">
+				<p><span class="under">Finally</span>
+				<p>If you like what you see please reach out to me. I live ten minutes from Buildxact Melbourne HQ and I can meet to talk more whenever suits you. 
+                <br><br>
+                Always,<br>
+                Lane    
+                <br><br><br>
+                <a href="tel:+61488482424">Click to call</a> or <a href="mailto:lane@fullsuite.co">click to email</a>.</p>
+			</div>
+		</article-->
+
+
+	</main>
+
+
+	<!--footer class=" footer themed ">
+		<div class="  center stack measure">
+			<h2>Made by Lane </h2>
+			<p>Designed and built in Denver using <a href="https://sketch.com/">Sketch</a>, <a
+					href="https://11ty.dev/">Eleventy</a>, and <a href="https://nova.app/">Nova</a>. Hosted in your neck
+				of the woods by <a href="https://netlify.com/">Netlify</a>.</p>
+		</div>
+	</footer-->
+
+
+</body>
+
+</html>

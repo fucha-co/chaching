@@ -1,37 +1,41 @@
-const htmlmin = require("html-minifier");
+const fs = require('fs');
 
-module.exports = function (eleventyConfig) {
-  eleventyConfig.setUseGitIgnore(false);
-
-  eleventyConfig.addWatchTarget("./_tmp/style.css");
-
-  eleventyConfig.addPassthroughCopy({ "./_tmp/style.css": "./style.css" });
-
-  eleventyConfig.addPassthroughCopy({
-    "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
+module.exports = function (config) {
+  config.setLiquidOptions({
+    dynamicPartials: true,
   });
 
-  eleventyConfig
-    .addPassthroughCopy({ '_assets/images': './images/' });
+  // Static assets to pass through
+  config.addPassthroughCopy('./src/fonts');
+  config.addPassthroughCopy('./src/images');
+  config.addPassthroughCopy('./src/favicon.ico');
+  config.addPassthroughCopy('./src/manifest.json');
+  config.addPassthroughCopy('./src/robots.txt');
 
-  eleventyConfig.addShortcode("version", function () {
-    return String(Date.now());
+  // 404
+  config.setBrowserSyncConfig({
+    callbacks: {
+      ready: function (err, browserSync) {
+        const content_404 = fs.readFileSync('dist/404.html');
+
+        browserSync.addMiddleware('*', (req, res) => {
+          // Provides the 404 content without redirect.
+          res.write(content_404);
+          res.end();
+        });
+      },
+    },
   });
 
-  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-    if (
-      process.env.ELEVENTY_PRODUCTION &&
-      outputPath &&
-      outputPath.endsWith(".html")
-    ) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-      });
-      return minified;
-    }
-
-    return content;
-  });
+  return {
+    dir: {
+      input: 'src',
+      output: 'src/_site',
+    },
+    passthroughFileCopy: true,
+    templateFormats: ['html', 'md', 'liquid'],
+    htmlTemplateEngine: 'liquid',
+    dataTemplateEngine: 'liquid',
+    markdownTemplateEngine: 'liquid',
+  };
 };

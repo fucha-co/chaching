@@ -1,5 +1,23 @@
-_site/
-_tmp/
+# dependecies installed by npm
+node_modules
+web_modules
+
+# build artefacts
+src/_site
+dist
+
+# secrets
+.env
+
+# logs
+*.log
+report.html
+
+# macOS related files
 .DS_Store
-node_modules/
-package-lock.json
+
+# version manager
+.tool-versions
+
+# Local Netlify folder
+.netlify
